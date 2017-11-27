@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1039.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta name="description" content="Create a Business Model Canvas online with your team collaboratively with our free tool" />
+    <meta name="keywords" content="business model canvas, business model, tool, osterwalder, pigneur, business model generation" />
+    <link rel="shortcut icon" type="image/png" href="https://canvanizer.com/favicon.ico?v=2">
+    <title>
+                    Compost Aruba - Canvanizer - Canvanizer
+            </title>
+    <script src="https://canvanizer.com/js/cufon-yui.js" type="text/javascript"></script>
+    <script src="https://canvanizer.com/js/roughage_400.font.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Cufon.replace('h1:not(.cufon_exclude)'); // Works without a selector engine
+        Cufon.replace('h2:not(.cufon_exclude)');
+        Cufon.replace('h3:not(.cufon_exclude)');
+        Cufon.replace('label:not(.cufon_exclude)');
+        Cufon.replace('.cufon');
+    </script>
+    <link rel="stylesheet" href="https://canvanizer.com/css/layout/template.css" type="text/css" media="screen, print" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://canvanizer.com/css/base/jquery.ui.all.css" media="screen, print"/>
+    <link rel="stylesheet" href="https://canvanizer.com/css/base/jquery-ui.css" type="text/css" media="screen, print" charset="utf-8" />
+
+    <link type="text/css" href="https://canvanizer.com/css/style.css?1500673640" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://canvanizer.com/css/canvas_print.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="https://canvanizer.com/css/jquery.modal.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://canvanizer.com/css/canvas_admin.css" media="screen, print"/>
+    <link rel="stylesheet" href="https://canvanizer.com/css/colour.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="https://canvanizer.com/css/fs_popup.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <script src="https://canvanizer.com/js/jquery.1.7.2.min.js" type="text/javascript"></script>
+    <script src="https://canvanizer.com/js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script src="https://canvanizer.com/js/jqModal.js" type="text/javascript"></script>
+    <script src="https://canvanizer.com/js/jquery.form.js" type="text/javascript"></script>
+    <!-- mobile detected -->
+        <script src="https://canvanizer.com/js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    
+</head>
+<body class="business-model-canvas">
+<div class="hid" id="status_message"></div>
+<div class="wrap wrap">	<div class="header">	
+	<div id="logo">
+		<span style="display: none;">Create a new Business Model Canvas</span>			
+		<a href="https://canvanizer.com/">
+			<span>Brainstorm better concepts. Together with your team</span>
+		</a>
+	</div>
+	<ul id="top-menu">
+		<li id="tm1"><a href="https://canvanizer.com/choose-canvas" title="Create your own canvas">Create your own canvas</a></li>
+		<li id="tm2"><a href="https://canvanizer.com/how-to-use" title="How to use">How to use</a></li>
+		<li id="tm3"><a href="https://canvanizer.com/faq" title="FAQ">FAQ</a></li>
+		<li id="tm4"><a href="https://canvanizer.com/about-us" title="About Us">About Us</a></li>
+		<li id="tm5"><a href="https://canvanizer.com/links" title="Links">Links</a></li>
+		<li id="tm6"><a href="https://canvanizer.com/contact" title="Contact">Contact</a></li>
+	</ul>
+    <a href="https://next.canvanizer.com/login?utm_source=navigation&utm_medium=link_page&utm_campaign=login" target="_blank">
+    <span class="login" style="font-size:1.5em;" alt=""Login 2.0" title="Login 2.0">
+        <span class="fa fa-sign-in" style="display:table-cell;vertical-align:middle;height: 3rem;width:3rem;left:0.75rem;"></span>
+    </span>
+    </a>
+</div>
+    <div class="content">
+        
+        <script type="text/javascript">
+//System config
+var can_update_interval = 2000;
+</script>
+
+<link type="text/css" rel="stylesheet" href="https://canvanizer.com/css/jquery.colorpicker.css" />
+<script src="https://canvanizer.com/js/jquery.colorpicker.js" ></script>
+<link type="text/css" rel="stylesheet" href="https://canvanizer.com/css/notes.css" />
+<script src="https://canvanizer.com/js/cansynch.js" ></script>
+
+<script src="https://canvanizer.com/js/ba-linkify.min.js" ></script>
+<div style="text-align: center; margin-bottom: 20px;">
+	<h1>Compost Aruba</h1>
+</div>
+
+	<table class="canvas_container_table" id="main_table" cellpadding="5" cellspacing="0">
+		<tr>
+			<td rowspan="2" class="border-right-none border-bottom-none" width="20%">
+				<h6 id="1">
+	Key Partners	</h6>
+
+<div class="tooltiptext" style="display: none">
+		<ol style="margin-left: 10px;">
+    	<li>Who are your key partners?<br/>2. Who are your key suppliers?</li>	</ol>
+</div>	
+
+			<p style="color:#666"></p>																														
+<div id="question_1" class="hid">
+	<ol>
+	<li>Who are your key partners?<br/>2. Who are your key suppliers?</li>	</ol>
+</div>
+<div id="block_1" class="drop_container ">
+	<div class="drop_notes note-np gn" id="note_line_mdj4aLq1DvTQ852ngsYUhg" data-color="gn" >
+        <h6>
+                <span id="note_headline_mdj4aLq1DvTQ852ngsYUhg" class="ed-parent note-headline ">KEY PARTNERS</span>
+                        </h6>
+        <div class='note-desc ed-parent border-yes'><p id="note_description_mdj4aLq1DvTQ852ngsYUhg">Key partners:<br />-Government<br />-Private sectors<br />-Companies<br /><br />Key suppliers:<br />-Hotels<br />-Airbnb<br />-B&amp;amp;amp;b<br />-Supermarkets<br />-Restaurants</p></div>
+</div>
+
+</div>
+
+	
+			</td>
+			<td class="border-right-none border-bottom-none" width="20%">
+				<h6 id="2">
+	Key Activities	</h6>
+
+<div class="tooltiptext" style="display: none">
+		<ol style="margin-left: 10px;">
+    	<li>What are your key activities?</li>	</ol>
+</div>	
+
+						<p style="color:#666"></p>																											
+<div id="question_2" class="hid">
+	<ol>
+	<li>What are your key activities?</li>	</ol>
+</div>
+<div id="block_2" class="drop_container ">
+	<div class="drop_notes note-np yn" id="note_line_dLhN6CUkmwyK1f1UnQf9PA" data-color="yn" >
+        <h6>
+                <span id="note_headline_dLhN6CUkmwyK1f1UnQf9PA" class="ed-parent note-headline ">KEY ACTIVITIES</span>
+                        </h6>
+        <div class='note-desc ed-parent border-yes'><p id="note_description_dLhN6CUkmwyK1f1UnQf9PA">-PR<br />-Ads<br />-Presentation<br />-Pop-ups<br />-TV/paper/radio/social media<br />-Sponsoring eco friendly events<br />-Hosting events<br />-School presentations<br />-Workshops<br />-Fundraising <br />-Providing bins <br />-Selling our product</p></div>
+</div>
+
+</div>
+
+	
+			</td>
+			<td rowspan="2" colspan="2" class="border-right-none border-bottom-none" width="20%">
+				<h6 id="3">
+	Value Proposition	</h6>
+
+<div class="tooltiptext" style="display: none">
+		<ol style="margin-left: 10px;">
+    	<li>What are your value propositions?</li>	</ol>
+</div>	
+
+									<p style="color:#666"></p>																								
+<div id="question_3" class="hid">
+	<ol>
+	<li>What are your value propositions?</li>	</ol>
+</div>
+<div id="block_3" class="drop_container ">
+	<div class="drop_notes note-np rn" id="note_line_fVDhtxDaCPHJpEvFCz9NFw" data-color="rn" >
+        <h6>
+                <span id="note_headline_fVDhtxDaCPHJpEvFCz9NFw" class="ed-parent note-headline ">VALUE PREPOSITION</span>
+                        </h6>
+        <div class='note-desc ed-parent border-yes'><p id="note_description_fVDhtxDaCPHJpEvFCz9NFw">We provide a good image by being the only composting company on Aruba. We do not import our goods which leads to Aruba's GDP to raise, since too much import causes more costs for our Island.<br />With our composting we put trash to good use. Because it is composted it'll decrease the water pollution and decrease landfill. We also promote planting with our natural fertilizer that we produce.<br /><br /><br />-good image<br />-reduce landfill<br />-competitive advantage<br />-promotes planting<br />-better fertilizer <br />-no import</p></div>
+</div>
+
+</div>
+
+	
+			</td>
+			<td class="border-right-none border-bottom-none" width="20%">
+				<h6 id="4">
+	Customer Relationships	</h6>
+
+<div class="tooltiptext" style="display: none">
+		<ol style="margin-left: 10px;">
+    	<li>Your customer relationships?</li>	</ol>
+</div>	
+
+												<p style="color:#666"></p>																					
+<div id="question_4" class="hid">
+	<ol>
+	<li>Your customer relationships?</li>	</ol>
+</div>
+<div id="block_4" class="drop_container ">
+	<div class="drop_notes note-np en" id="note_line_YDauj_kvLxsR2YTmiE4KsA" data-color="en" >
+        <h6>
+                <span id="note_headline_YDauj_kvLxsR2YTmiE4KsA" class="ed-parent note-headline ">CUSTOMER RELATIONSHIP</span>
+                        </h6>
+        <div class='note-desc ed-parent border-yes'><p id="note_description_YDauj_kvLxsR2YTmiE4KsA">-Give presentations<br />-PR host community<br />-Customer feedback<br />-How will they benefit:<br />Give us your trash and you get the <br />product cheaper.<br /><br />-Will get certified gold eco stars for being ecofriendly  </p></div>
+</div>
+
+</div>
+
+	
+			</td> 
+			<td rowspan="2" class="border-bottom-none" width="20%">
+				<h6 id="5">
+	Customer Segments	</h6>
+
+<div class="tooltiptext" style="display: none">
+		<ol style="margin-left: 10px;">
+    	<li>Customer Segments</li>	</ol>
+</div>	
+
+															<p style="color:#666"></p>																		
+<div id="question_5" class="hid">
+	<ol>
+	<li>Customer Segments</li>	</ol>
+</div>
+<div id="block_5" class="drop_container ">
+	<div class="drop_notes note-np an" id="note_line_lub3-4aQqwpHgnwL9jCXtQ" data-color="an" >
+        <h6>
+                <span id="note_headline_lub3-4aQqwpHgnwL9jCXtQ" class="ed-parent note-headline ">CUSTOMER SEGMENTS</span>
+                        </h6>
+        <div class='note-desc ed-parent border-yes'><p id="note_description_lub3-4aQqwpHgnwL9jCXtQ">-Host community <br />-Hotels<br />-Airbnb<br />-B&amp;amp;amp;b<br />-Supermarkets<br />-Restaurants<br />-Ecofriendly customers </p></div>
+</div>
+
+</div>
+
+	
+			</td>
+		</tr>
+		<tr>
+			<td class="border-bottom-none border-right-none">
+				<h6 id="6">
+	Key Resources	</h6>
+
+<div class="tooltiptext" style="display: none">
+		<ol style="margin-left: 10px;">
+    	<li>What are your key resources?</li>	</ol>
+</div>	
+
+																		<p style="color:#666"></p>															
+<div id="question_6" class="hid">
+	<ol>
+	<li>What are your key resources?</li>	</ol>
+</div>
+<div id="block_6" class="drop_container ">
+	<div class="drop_notes note-np en" id="note_line_eSqP9q3gOxT4ljwS3IW12Q" data-color="en" >
+        <h6>
+                <span id="note_headline_eSqP9q3gOxT4ljwS3IW12Q" class="ed-parent note-headline ">KEY RESOURCES</span>
+                        </h6>
+        <div class='note-desc ed-parent border-yes'><p id="note_description_eSqP9q3gOxT4ljwS3IW12Q">-Organic trash<br />-Trucks<br />-Barrels<br />-Capital <br />-Labor<br />-Facility <br />-Machines<br />-Electricity <br />-Distribution methods (cardboard)<br />-Eco friendly product packaging</p></div>
+</div>
+
+</div>
+
+	
+			</td>
+			<td class="border-bottom-none border-right-none">
+				<h6 id="7">
+	Channels	</h6>
+
+<div class="tooltiptext" style="display: none">
+		<ol style="margin-left: 10px;">
+    	<li>Channels</li>	</ol>
+</div>	
+
+																					<p style="color:#666"></p>												
+<div id="question_7" class="hid">
+	<ol>
+	<li>Channels</li>	</ol>
+</div>
+<div id="block_7" class="drop_container ">
+	<div class="drop_notes note-np yn" id="note_line_5uyLB5NCNvkvD1shqSS9bw" data-color="yn" >
+        <h6>
+                <span id="note_headline_5uyLB5NCNvkvD1shqSS9bw" class="ed-parent note-headline ">CHANNELS</span>
+                        </h6>
+        <div class='note-desc ed-parent border-yes'><p id="note_description_5uyLB5NCNvkvD1shqSS9bw">-2 for 1<br />-Bundling<br />-Discounts<br />-Coupons<br />-Part of profit goes to good cause<br /></p></div>
+</div>
+
+</div>
+
+	
+			</td> 
+		</tr>
+		<tr class="fix_width_section">
+			<td colspan="3" class="border-right-none">
+				<h6 id="8">
+	Cost Structure	</h6>
+
+<div class="tooltiptext" style="display: none">
+		<ol style="margin-left: 10px;">
+    	<li>What about your cost structure?</li>	</ol>
+</div>	
+
+																								<p style="color:#666"></p>									
+<div id="question_8" class="hid">
+	<ol>
+	<li>What about your cost structure?</li>	</ol>
+</div>
+<div id="block_8" class="drop_container ">
+	<div class="drop_notes note-np an" id="note_line_1aRMXhn0KdCz9lHEvHqNDw" data-color="an" >
+        <h6>
+                <span id="note_headline_1aRMXhn0KdCz9lHEvHqNDw" class="ed-parent note-headline ">COST STRUCTURE</span>
+                        </h6>
+        <div class='note-desc ed-parent border-yes'><p id="note_description_1aRMXhn0KdCz9lHEvHqNDw">-Know the market<br />-Set a value based price<br />-Weighing compost<br />-Less input, more output<br />-Outsourcing<br />-Consider cost -pricing<br /></p></div>
+</div>
+
+</div>
+
+	
+			</td>
+			<td colspan="3">
+				<h6 id="9">
+	Revenue Streams	</h6>
+
+<div class="tooltiptext" style="display: none">
+		<ol style="margin-left: 10px;">
+    	<li>What are your revenue streams?</li>	</ol>
+</div>	
+
+																											<p style="color:#666"></p>						
+<div id="question_9" class="hid">
+	<ol>
+	<li>What are your revenue streams?</li>	</ol>
+</div>
+<div id="block_9" class="drop_container ">
+	<div class="drop_notes note-np gn" id="note_line_Y0YqZQFkoN_eOpmGHMM8VA" data-color="gn" >
+        <h6>
+                <span id="note_headline_Y0YqZQFkoN_eOpmGHMM8VA" class="ed-parent note-headline ">REVENUE STREAMS</span>
+                        </h6>
+        <div class='note-desc ed-parent border-yes'><p id="note_description_Y0YqZQFkoN_eOpmGHMM8VA">-Selling the fertilizers<br />-Fundraising<br />-Investors <br />-Subscription fee</p></div>
+</div>
+
+</div>
+
+	
+			</td> 
+		</tr>
+			</table>
+		
+<div style="text-align: center; margin-top: 10px; font-weight: bold; font-size:12px; text-decoration:none">
+	Powered by <a href="http://canvanizer.com" style="font-size:12px; text-decoration:none" target="_blank">canvanizer.com</a>
+</div>
+
+<script type="text/javascript">	
+
+	$( function(){
+		
+		cansynch.init( {
+				version : '60'  , 
+				url 	: 'https://canvanizer.com/plan_updater/readonly_update/rICL0MCEsgzOK/'
+		});
+		
+	});
+	
+</script>
+
+    </div>
+    <div id="footer-container">
+        <div id="footer-left"></div>
+        <div id="footer-right"></div>
+        <div id="footer-center">
+            <div class="share">
+                <a href="https://www.facebook.com/canvanizer" target="_blank"><img src="https://canvanizer.com/images/icon-fb.jpg" /></a>
+                <a href="https://twitter.com/Canvanizer" target="_blank"><img src="https://canvanizer.com/images/icon-twitter.jpg" /></a>
+            </div>
+            <div class="links">
+                	<a href="https://next.canvanizer.com/?utm_source=footer&utm_medium=link_page&utm_campaign=preview" target="_blank" title="Canvanizer 2.0">Canvanizer 2.0</a> |
+	<a href="https://canvanizer.com/blog/" target="_blank" title="Blog">Blog</a> |
+	<a href="https://canvanizer.com/forgot-links">Forgot Links</a>
+	            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Google Code for Canvanizer Visitors Remarketing List -->
+	<script type="text/javascript">
+		
+	/* <![CDATA[ */
+	
+	var google_conversion_id = 957171782;
+		
+	var google_conversion_language = "en";
+		
+	var google_conversion_format = "3";
+		
+	var google_conversion_color = "ffffff";
+		
+	var google_conversion_label = "9tpJCJLMpwMQxpC1yAM";
+		
+	var google_conversion_value = 0;
+		
+	/* ]]> */
+	
+	</script>
+		
+	<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js"></script>
+		
+	<noscript>
+		
+	<div style="display:inline;">
+		
+		<img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/957171782/?label=9tpJCJLMpwMQxpC1yAM&guid=ON&script=0"/>
+		
+	</div>
+		
+	</noscript>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-27627622-1']);
+	  _gaq.push(['_trackPageview']);
+		
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();		
+	</script>
+    
+<style>
+    .corner-link {
+        height: 13rem;
+        width: 13rem;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        pointer-events: none;
+    }
+
+    .badgeimg {
+        height: 100%;
+        width: 100%;
+    }
+
+    .link-svg {
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .link-handle {
+        cursor: pointer;
+
+        pointer-events: all;
+    }
+</style>
+<div class="corner-link">
+    <img class="badgeimg" src="/images/thenextlevel/canvanizer20_badge.png">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+         class="link-svg" viewBox="0 0 10 10">
+        <a xlink:href="https://canvanizer.com/thenextlevel/?utm_source=popup&utm_medium=link_page&utm_campaign=preview" target="_blank">
+            <polygon points="0,0 10,0 10,10" class="link-handle" opacity="0" />
+        </a>
+    </svg>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"90d741a5b5","applicationID":"2169823","transactionName":"bgNVMUcCDEpRBUcNCldJdgZBCg1XHyVSChNYFRgMWwcHQQ==","queueTime":0,"applicationTime":11,"atts":"QkRWRw8YH0Q=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
